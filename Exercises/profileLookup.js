@@ -40,8 +40,17 @@ const contacts = [{
 
 function lookUpProfile(name, prop) {
     // Only change code below this line
-
-    // Only change code above this line
+    for (let x = 0; x < contacts.length; x++) {
+        if (contacts[x].firstName === name) {
+            if (contacts[x].hasOwnProperty(prop)) {
+                return contacts[x][prop]
+            } else {
+                return 'No such property'
+            }
+        }
+    }
+    return 'No such contact'
+        // Only change code above this line
 }
 
-lookUpProfile("Akira", "likes");
+console.log(lookUpProfile("Akira", "likes"));
