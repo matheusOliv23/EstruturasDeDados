@@ -41,11 +41,19 @@ function removerSeTiver(array, padraoTextual) {
     return array.filter(el => !el.includes(padraoTextual))
 }
 
+function removerSeApenasNumeros(array) {
+    return array.filter(el => {
+        const num = parseInt(el.trim())
+        return num !== num
+    })
+}
+
 module.exports = {
     lerDiretorio,
     lerArquivo,
     lerArquivos,
     elementosTerminadosCom,
     removerSeVazio,
-    removerSeTiver
+    removerSeTiver,
+    removerSeApenasNumeros
 }
