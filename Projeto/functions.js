@@ -37,8 +37,10 @@ function removerSeVazio(array) {
     return array.filter(el => el.trim())
 }
 
-function removerSeTiver(array, padraoTextual) {
-    return array.filter(el => !el.includes(padraoTextual))
+function removerSeTiver(padraoTextual) {
+    return function(array) {
+        return array.filter(el => !el.includes(padraoTextual))
+    }
 }
 
 function removerSeApenasNumeros(array) {
